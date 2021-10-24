@@ -58,9 +58,10 @@ document.addEventListener ("click" , (e) => {
 
 if(el.classList.contains('btn-validate')) {
     const cpf_num = document.querySelector("#cpf_num");
+    const cpf_response = document.querySelector(".cpf-response")
     const newCpf = new Validate_cpf(cpf_num.value).validate(); 
-    if(newCpf === true)  return console.log("CPF VALIDO") 
-    else console.log("CPF INVALIDO")
+    if(newCpf === true)  return cpf_response.innerHTML = "CPF VALIDO"
+    else cpf_response.innerHTML = "CPF INVALIDO"
 }
 
 })
